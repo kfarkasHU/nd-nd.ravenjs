@@ -1,4 +1,5 @@
 
+
 # RavenJS
  My custom MVVM framework.
 
@@ -30,7 +31,7 @@ The `raven-value` attribute works on every standarad [HTML element](https://micr
 
 **Example**
 
-`<input type="text" raven-value="bindable" />`
+    <input type="text" raven-value="bindable" />
 
 #### 1.3.2. text
 #### 1.3.3. HTML
@@ -41,8 +42,14 @@ The `raven-value` attribute works on every standarad [HTML element](https://micr
 ##### 1.3.4.4. else statement
 #### 1.3.5. loops
 ##### 1.3.5.1. foreach statement
-##### 1.3.5.2. for statemen
-#### 1.3.6. create raven nest
+##### 1.3.5.2. for statement
+#### 1.3.6. Events
+##### 1.3.6.1. Click
+##### 1.3.6.2. KeyDown
+##### 1.3.6.3. KeyUp
+##### 1.3.6.4. OnFocus
+##### 1.3.6.5. OnFocusOver
+#### 1.3.7. create raven nest
 To bind all of your bindables the currently active template (so, bind your viewmodel to your model), you need to create a raven nest.
 First of all, you need two things to do this.
 - need a HTML element
@@ -87,6 +94,22 @@ For the viewmodel, you can use any object we discussed before.
 
 ### 1.4. Routing
 #### 1.4.1. Links
+By default the RavenJS does not have a standard routing attribute. You need to write your own event handler for it. You can use the `raven-click` attribute for this task. After the event is fired, you can start the routing your own.
+
+**EXAMPLE**
+
+    <div id="demo-container">
+       <span raven-click="onLinkClick()">Click to route</label>
+    </div>
+    
+    <script>
+        
+    function onLinkClick() {
+     RavenJS.FlyTo('/user/profile/1');
+    }
+        
+    </script>
+
 #### 1.4.2. Routing events
 ##### 1.4.2. OnBeforeRouting
 ##### 1.4.3. OnAfterRouting
