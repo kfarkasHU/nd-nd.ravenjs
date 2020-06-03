@@ -1,4 +1,4 @@
-export class RavenObejctHelper
+export class RavenObjectHelper
 {
     private static _currentNumber = 1000;
 

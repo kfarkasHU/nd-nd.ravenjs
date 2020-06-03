@@ -1,4 +1,4 @@
-import { RavenObejctHelper } from "../helper/raven-object-helper";
+import { RavenObjectHelper } from "../helper/raven-object-helper";
 
 export abstract class RavenObject
 {
@@ -6,7 +6,7 @@ export abstract class RavenObject
 
     constructor()
     {
-        this._identifier = RavenObejctHelper.nextId;
+        this._identifier = RavenObjectHelper.nextId;
     }
 
     public get identifier(): string {

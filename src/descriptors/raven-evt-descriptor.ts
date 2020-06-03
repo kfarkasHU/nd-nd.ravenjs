@@ -1,19 +1,16 @@
-import { RavenObject } from "../objects/raven-object";
+import { RavenDescriptor } from "./raven-descriptor";
+import { IRavenEventDescriptor } from "./if-raven-descriptor";
 
-export class RavenEventDescriptor extends RavenObject
+export class RavenEventDescriptor extends RavenDescriptor implements IRavenEventDescriptor
 {
     constructor
     (
-        private _selector: string,
-        private _eventSelector: string,
-        private _onEvent: Function
+        _selector: string,
+        private readonly _eventSelector: string,
+        private readonly _onEvent: Function
     )
     {
-        super();
-    }
-
-    public get selector(): string {
-        return this._selector;
+        super(_selector);
     }
 
     public get eventSelector(): string {
