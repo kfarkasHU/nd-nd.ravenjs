@@ -1,3 +1,3 @@
-import { RavenEventDescriptorCore } from "./raven-evt";
+import { create } from "./raven-evt";
 
-RavenEventDescriptorCore.create("raven-lostfocus", "onfocusout");
+create("raven-lostfocus", "onfocusout");
