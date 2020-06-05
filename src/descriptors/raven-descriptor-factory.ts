@@ -8,7 +8,7 @@ export abstract class RavenDescriptorFactory<T>
     protected abstract createDescriptorInternal(...args: any[]): T;
 
     public getAllDescriptor(): Array<T> {
-        return super.items;
+        return this.items;
     }
 
     public registerDescriptor(descriptor: T): void {

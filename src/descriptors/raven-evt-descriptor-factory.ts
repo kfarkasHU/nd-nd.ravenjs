@@ -1,7 +1,7 @@
 import { IRavenEventDescriptor, IRavenEventDescriptorFactory } from "./if-raven-descriptor";
 import { RavenEventDescriptor } from "./raven-evt-descriptor";
 import { RavenDescriptorFactory } from "./raven-descriptor-factory";
-import { RavenFunction } from "../objects/internal/raven-function";
+import { RavenFunction } from "../objects/internal/if-raven-function";
 
 export class RavenEventDescriptorFactory
     extends RavenDescriptorFactory<IRavenEventDescriptor>

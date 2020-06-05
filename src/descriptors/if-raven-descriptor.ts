@@ -1,6 +1,5 @@
 import { RavenFunction } from "../objects/internal/if-raven-function";
 import { RavenBinderFunction } from "../objects/internal/if-raven-binder-function";
-import { RavenAttributeValidatorFunction } from "../objects/internal/if-raven-attribute-validator-function";
 
 export interface IRavenDescriptor {    
     identifier: string,
@@ -13,7 +12,6 @@ export interface IRavenEventDescriptor extends IRavenDescriptor {
 }
 
 export interface IRavenBindingDescriptor extends IRavenDescriptor {
-    getAttributeValidatorFn(): RavenAttributeValidatorFunction,
     getBinderFn(): RavenBinderFunction
 }
 
@@ -30,6 +28,6 @@ export interface IRavenEventDescriptorFactory extends IRavenDescriptorFactory<IR
 
 export interface IRavenBindingDescriptionFactory extends IRavenDescriptorFactory<IRavenBindingDescriptor>
 {
-    createAndRegisterDescriptor(selector: string, attributeValidatorFn: RavenAttributeValidatorFunction, binderFn: RavenBinderFunction): IRavenBindingDescriptor,
-    createDescriptor(selector: string, attributeValidatorFn: RavenAttributeValidatorFunction, binderFn: RavenBinderFunction): IRavenBindingDescriptor,
+    createAndRegisterDescriptor(selector: string, binderFn: RavenBinderFunction): IRavenBindingDescriptor,
+    createDescriptor(selector: string, binderFn: RavenBinderFunction): IRavenBindingDescriptor,
 }
