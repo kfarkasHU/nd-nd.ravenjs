@@ -1,6 +1,8 @@
 import { IRavenBindingDescriptor, IRavenBindingDescriptionFactory } from "./if-raven-descriptor";
 import { RavenBindingDescriptor } from "./raven-bnd-descriptor";
 import { RavenDescriptorFactory } from "./raven-descriptor-factory";
+import { RavenBinderFunction } from "../objects/internal/if-raven-binder-function";
+import { RavenAttributeValidatorFunction } from "../objects/internal/if-raven-attribute-validator-function";
 
 export class RavenBindingDescriptorFactory
     extends RavenDescriptorFactory<IRavenBindingDescriptor>
@@ -19,7 +21,11 @@ export class RavenBindingDescriptorFactory
         return this._instance;
     }
 
-    protected createDescriptorInternal(selector: string, onEvaluate: Function): IRavenBindingDescriptor {
-        return new RavenBindingDescriptor(selector, onEvaluate);
+    protected createDescriptorInternal(
+            selector: string,
+            attributeValidatorFn: RavenAttributeValidatorFunction,
+            binderFn: RavenBinderFunction
+        ): IRavenBindingDescriptor {
+        return new RavenBindingDescriptor(selector, attributeValidatorFn, binderFn);
     }
 }

@@ -1,5 +1,6 @@
 import { RavenDescriptor } from "./raven-descriptor";
 import { IRavenEventDescriptor } from "./if-raven-descriptor";
+import { RavenFunction } from "../objects/internal/raven-function";
 
 export class RavenEventDescriptor extends RavenDescriptor implements IRavenEventDescriptor
 {
@@ -7,7 +8,7 @@ export class RavenEventDescriptor extends RavenDescriptor implements IRavenEvent
     (
         _selector: string,
         private readonly _eventSelector: string,
-        private readonly _onEvent: Function
+        private readonly _onEvent: RavenFunction
     )
     {
         super(_selector);
@@ -17,7 +18,7 @@ export class RavenEventDescriptor extends RavenDescriptor implements IRavenEvent
         return this._eventSelector;
     }
 
-    public get onEvent(): Function {
+    public get onEvent(): RavenFunction {
         return this._onEvent;
     }
 }

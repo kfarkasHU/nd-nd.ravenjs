@@ -1,3 +1,7 @@
+import { RavenFunction } from "../objects/internal/if-raven-function";
+import { RavenBinderFunction } from "../objects/internal/if-raven-binder-function";
+import { RavenAttributeValidatorFunction } from "../objects/internal/if-raven-attribute-validator-function";
+
 export interface IRavenDescriptor {    
     identifier: string,
     selector: string
@@ -5,11 +9,12 @@ export interface IRavenDescriptor {
 
 export interface IRavenEventDescriptor extends IRavenDescriptor {
     eventSelector: string,
-    onEvent: Function
+    onEvent: RavenFunction
 }
 
 export interface IRavenBindingDescriptor extends IRavenDescriptor {
-    onEvaluate: Function
+    getAttributeValidatorFn(): RavenAttributeValidatorFunction,
+    getBinderFn(): RavenBinderFunction
 }
 
 export interface IRavenDescriptorFactory<T> {
@@ -19,12 +24,12 @@ export interface IRavenDescriptorFactory<T> {
 
 export interface IRavenEventDescriptorFactory extends IRavenDescriptorFactory<IRavenEventDescriptor>
 {
-    createAndRegisterDescriptor(selector: string, eventSelector: string, onEvent: Function): IRavenEventDescriptor,
-    createDescriptor(selector: string, eventSelector: string, onEvent: Function): IRavenEventDescriptor,
+    createAndRegisterDescriptor(selector: string, eventSelector: string, onEvent: RavenFunction): IRavenEventDescriptor,
+    createDescriptor(selector: string, eventSelector: string, onEvent: RavenFunction): IRavenEventDescriptor,
 }
 
 export interface IRavenBindingDescriptionFactory extends IRavenDescriptorFactory<IRavenBindingDescriptor>
 {
-    createAndRegisterDescriptor(selector: string, onEvaluate: Function): IRavenBindingDescriptor,
-    createDescriptor(selector: string, onEvaluate: Function): IRavenBindingDescriptor,
+    createAndRegisterDescriptor(selector: string, attributeValidatorFn: RavenAttributeValidatorFunction, binderFn: RavenBinderFunction): IRavenBindingDescriptor,
+    createDescriptor(selector: string, attributeValidatorFn: RavenAttributeValidatorFunction, binderFn: RavenBinderFunction): IRavenBindingDescriptor,
 }
