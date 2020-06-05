@@ -38,8 +38,6 @@ The `raven-value` attribute works on every standarad [HTML element](https://micr
 #### 1.3.4. conditional statements
 ##### 1.3.4.1. if statement
 ##### 1.3.4.2. notif statement
-##### 1.3.4.3. elseif statement
-##### 1.3.4.4. else statement
 #### 1.3.5. loops
 ##### 1.3.5.1. foreach statement
 ##### 1.3.5.2. for statement
