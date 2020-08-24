@@ -163,7 +163,7 @@ Raven.plugins.binding.fly("click-demo", clickModel);</pre>
         <div class="card-header" id="headingText">
             <h2 class="mb-0">
                 <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
-                    # contextmenu binding <span class="badge badge-pill badge-primary">new</span>
+                    # rightclick binding <span class="badge badge-pill badge-primary">new</span>
                 </button>
             </h2>
         </div>
@@ -181,14 +181,79 @@ Raven.plugins.binding.fly("click-demo", clickModel);</pre>
                     <div class="col">
         <div class="row">
             <div class="col mt-3">
-                <div id="contextmenu-demo">
-    <span raven-contextmenu="onContextMenu(ravenEvent)" style="cursor: pointer">Katt rám másodlagos gombbal!</span>
+                <div id="rightclick-demo">
+    <span raven-rightclick="onRightClick(ravenEvent)">Katt rám másodlagos gombbal!</span>
 </div>
             </div>
             <div class="col mt-3">
                 <button class="btn btn-primary" onclick="function_2()">Click me</button>
                 <script>
                     function function_2() {
+                        const rightclickModel = {
+    onRightClick: function(e) {
+        console.log("event", e);
+        alert("katt!");
+    }
+};
+
+Raven.plugins.binding.fly("rightclick-demo", rightclickModel);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+                    <div class="col">
+    <div class="row">
+        <div class="col">
+            <span class="title border-bottom">HTML</span>
+<pre>&lt;div id="rightclick-demo"&gt;
+    &lt;span raven-rightclick="onRightClick(ravenEvent)"&gt;Katt rám másodlagos gombbal!&lt;/span&gt;
+&lt;/div&gt;</pre>
+            <span class="title border-bottom">JS</span>
+<pre>const rightclickModel = {
+    onRightClick: function(e) {
+        console.log("event", e);
+        alert("katt!");
+    }
+};
+
+Raven.plugins.binding.fly("rightclick-demo", rightclickModel);</pre>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div><div class="card text-white bg-secondary">
+        <div class="card-header" id="headingText">
+            <h2 class="mb-0">
+                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
+                    # contextmenu binding <span class="badge badge-pill badge-primary">new</span>
+                </button>
+            </h2>
+        </div>
+    
+        <div id="collapse_3" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="title border-bottom">
+                            Demo
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+        <div class="row">
+            <div class="col mt-3">
+                <div id="contextmenu-demo">
+    <span raven-contextmenu="onContextMenu(ravenEvent)">Katt rám másodlagos gombbal!</span>
+</div>
+            </div>
+            <div class="col mt-3">
+                <button class="btn btn-primary" onclick="function_3()">Click me</button>
+                <script>
+                    function function_3() {
                         const contextmenuModel = {
     onContextMenu: function(e) {
         console.log("event", e);
@@ -207,7 +272,7 @@ Raven.plugins.binding.fly("contextmenu-demo", contextmenuModel);
         <div class="col">
             <span class="title border-bottom">HTML</span>
 <pre>&lt;div id="contextmenu-demo"&gt;
-    &lt;span raven-contextmenu="onContextMenu(ravenEvent)" style="cursor: pointer"&gt;Katt rám másodlagos gombbal!&lt;/span&gt;
+    &lt;span raven-contextmenu="onContextMenu(ravenEvent)"&gt;Katt rám másodlagos gombbal!&lt;/span&gt;
 &lt;/div&gt;</pre>
             <span class="title border-bottom">JS</span>
 <pre>const contextmenuModel = {
@@ -227,13 +292,13 @@ Raven.plugins.binding.fly("contextmenu-demo", contextmenuModel);</pre>
     </div><div class="card text-white bg-secondary">
         <div class="card-header" id="headingText">
             <h2 class="mb-0">
-                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
+                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" aria-controls="collapse_4">
                     # if binding <span class="badge badge-pill badge-primary">new</span>
                 </button>
             </h2>
         </div>
     
-        <div id="collapse_3" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
+        <div id="collapse_4" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
             <div class="card-body">
                 <div class="row">
                     <div class="col">
@@ -252,9 +317,9 @@ Raven.plugins.binding.fly("contextmenu-demo", contextmenuModel);</pre>
 </div>
             </div>
             <div class="col mt-3">
-                <button class="btn btn-primary" onclick="function_3()">Click me</button>
+                <button class="btn btn-primary" onclick="function_4()">Click me</button>
                 <script>
-                    function function_3() {
+                    function function_4() {
                         const ifModel = {
     alwaysTrue: true,
     alwaysFalse: false
@@ -290,13 +355,13 @@ Raven.plugins.binding.fly("if-demo", ifModel);</pre>
     </div><div class="card text-white bg-secondary">
         <div class="card-header" id="headingText">
             <h2 class="mb-0">
-                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" aria-controls="collapse_4">
+                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_5" aria-expanded="true" aria-controls="collapse_5">
                     # for binding <span class="badge badge-pill badge-primary">new</span>
                 </button>
             </h2>
         </div>
     
-        <div id="collapse_4" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
+        <div id="collapse_5" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
             <div class="card-body">
                 <div class="row">
                     <div class="col">
@@ -331,9 +396,9 @@ Raven.plugins.binding.fly("if-demo", ifModel);</pre>
 </div>
             </div>
             <div class="col mt-3">
-                <button class="btn btn-primary" onclick="function_4()">Click me</button>
+                <button class="btn btn-primary" onclick="function_5()">Click me</button>
                 <script>
-                    function function_4() {
+                    function function_5() {
                         const forModel = {
     objects: [
         { id: 1, text: "egy" },
