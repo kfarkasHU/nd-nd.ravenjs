@@ -11,7 +11,6 @@ const forEvaluateFn = function(
 ) {
     const results = RavenEvaluator.evaluate(expression, context);
     const cloned = element.cloneNode(true) as HTMLElement;
-    // element.parentElement.innerHTML = "";
 
     for(let i = 0; i < results.length; i++) {
         const currentChild = cloned.cloneNode(true) as HTMLElement;
@@ -20,8 +19,6 @@ const forEvaluateFn = function(
             ["binding"]
             ["fly"](currentChild, { element: results[i] })
         ;
-
-        console.log("c", currentChild);
 
         element.parentElement.appendChild(currentChild);// (childInnerElements[i].cloneNode(true) as HTMLElement));
     }
