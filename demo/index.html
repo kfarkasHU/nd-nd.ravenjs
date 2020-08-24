@@ -1,256 +1,274 @@
-<html>
-    <head>
-        <script src="../dist/rjs6.js"></script>
+
+        <html>
+            <head>
+                <script src="../dist/rjs6-latest-dev.js"></script>
+                
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="bootstrap.min.css">
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="bootstrap.min.css">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-        <title>ravenjs demo</title>
-
-    </head>
-    <body style="background-color: #f6f6f6">
-        <nav class="navbar navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">
-              <img src="./ravenjs_transparent_small.png" alt="" loading="lazy">
-                RavenJS 6.0
-            </a>
-        </nav>
-
-        <div class="container">
-            <div class="jumbotron jumbotron-fluid bg-primary text-white mt-2 shadow p-3 mb-5 rounded">
+                <title>ravenjs demo</title>
+        
+            </head>
+            <body style="background-color: #f6f6f6">
+                <nav class="navbar navbar-dark bg-primary">
+                    <a class="navbar-brand" href="#">
+                      <img src="./ravenjs_transparent_small.png" alt="" loading="lazy">
+                        RavenJS 6.0
+                    </a>
+                </nav>
+        
                 <div class="container">
-                    <h1 class="display-4">RavenJS 6.0</h1>
-                    <p class="lead">Just another JS lib</p>
-                </div>
-            </div>
-
-            <div class="page">
+                    <div class="jumbotron jumbotron-fluid bg-primary text-white mt-2 shadow p-3 mb-5 rounded">
+                        <div class="container">
+                            <h1 class="display-4">RavenJS 6.0</h1>
+                            <p class="lead">Just another JS lib</p>
+                        </div>
+                    </div>
+        
+                    <div class="page">
+                        <div class="row">
+                            <div class="col">
+                                <div class="accordion shadow mb-5 rounded" id="accordionExample">
+                                    <div class="card text-white bg-secondary">
+        <div class="card-header" id="headingText">
+            <h2 class="mb-0">
+                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_0" aria-expanded="true" aria-controls="collapse_0">
+                    # text binding <span class="badge badge-pill badge-primary">new</span>
+                </button>
+            </h2>
+        </div>
+    
+        <div id="collapse_0" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
+            <div class="card-body">
                 <div class="row">
                     <div class="col">
-                        <div class="accordion shadow mb-5 rounded" id="accordionExample">
-                            <div class="card text-white bg-secondary">
-                                <div class="card-header" id="headingText">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseText" aria-expanded="true" aria-controls="collapseText">
-                                            # text binding <span class="badge badge-pill badge-primary">new</span>
-                                        </button>
-                                    </h2>
-                                </div>
-                          
-                                <div id="collapseText" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h2 class="title border-bottom">
-                                                    Demo
-                                                </h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col mt-3">
-                                                        <div id="text-demo">
-                                                            <span raven-text="text1">szöveg 1</span> <br />
-                                                            <span raven-text="text2">szöveg 2</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col mt-3">
-                                                        <button class="btn btn-primary" onclick="ravenFlyText()">Click me</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <span class="title border-bottom">HTML</span>
+                        <h2 class="title border-bottom">
+                            Demo
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+        <div class="row">
+            <div class="col mt-3">
+                <div id="text-demo">
+    <span raven-text="text1">szöveg 1</span><br />
+    <span raven-text="text2">szöveg 2</span>
+</div>
+            </div>
+            <div class="col mt-3">
+                <button class="btn btn-primary" onclick="function_0()">Click me</button>
+                <script>
+                    function function_0() {
+                        const textModel = {
+    text1: "alma",
+    text2: "béka"
+};
+
+Raven.plugins.binding.fly("text-demo", textModel);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+                    <div class="col">
+    <div class="row">
+        <div class="col">
+            <span class="title border-bottom">HTML</span>
 <pre>&lt;div id="text-demo"&gt;
-    &lt;span raven-text="text1"&gt;szöveg 1&lt;/span&gt; &lt;br /&gt;
+    &lt;span raven-text="text1"&gt;szöveg 1&lt;/span&gt;&lt;br /&gt;
     &lt;span raven-text="text2"&gt;szöveg 2&lt;/span&gt;
 &lt;/div&gt;</pre>
-                                                        <span class="title border-bottom">JS</span>
+            <span class="title border-bottom">JS</span>
 <pre>const textModel = {
     text1: "alma",
     text2: "béka"
 };
 
 Raven.plugins.binding.fly("text-demo", textModel);</pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card text-white bg-secondary">
-                                <div class="card-header" id="headingIf">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseIf" aria-expanded="true" aria-controls="collapseIf">
-                                            # if binding <span class="badge badge-pill badge-primary">new</span>
-                                        </button>
-                                    </h2>
-                                </div>
-                          
-                                <div id="collapseIf" class="collapse" aria-labelledby="headingIf" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h2 class="title border-bottom">
-                                                    Demo
-                                                </h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col mt-3">
-                                                        <div id="if-demo">
-                                                            <span raven-if="alwaysTrue">itt igaz</span> <br />
-                                                            <span raven-if="alwaysFalse">itt hamis</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col mt-3">
-                                                        <button class="btn btn-primary" onclick="ravenFlyIf()">Click me</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <span class="title border-bottom">HTML</span>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div><div class="card text-white bg-secondary">
+        <div class="card-header" id="headingText">
+            <h2 class="mb-0">
+                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
+                    # if binding <span class="badge badge-pill badge-primary">new</span>
+                </button>
+            </h2>
+        </div>
+    
+        <div id="collapse_1" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="title border-bottom">
+                            Demo
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+        <div class="row">
+            <div class="col mt-3">
+                <div id="if-demo">
+    <span raven-if="alwaysTrue">itt igaz</span> <br />
+    <span raven-if="alwaysFalse">itt hamis</span>
+</div>
+            </div>
+            <div class="col mt-3">
+                <button class="btn btn-primary" onclick="function_1()">Click me</button>
+                <script>
+                    function function_1() {
+                        const ifModel = {
+    alwaysTrue: true,
+    alwaysFalse: false
+};
+
+Raven.plugins.binding.fly("if-demo", ifModel);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+                    <div class="col">
+    <div class="row">
+        <div class="col">
+            <span class="title border-bottom">HTML</span>
 <pre>&lt;div id="if-demo"&gt;
     &lt;span raven-if="alwaysTrue"&gt;itt igaz&lt;/span&gt; &lt;br /&gt;
     &lt;span raven-if="alwaysFalse"&gt;itt hamis&lt;/span&gt;
 &lt;/div&gt;</pre>
-                                                        <span class="title border-bottom">JS</span>
+            <span class="title border-bottom">JS</span>
 <pre>const ifModel = {
     alwaysTrue: true,
     alwaysFalse: false
 };
 
 Raven.plugins.binding.fly("if-demo", ifModel);</pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card text-white bg-secondary">
-                                <div class="card-header" id="headingFor">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFor" aria-expanded="true" aria-controls="collapseFor">
-                                            # for binding <span class="badge badge-pill badge-primary">new</span>
-                                        </button>
-                                    </h2>
-                                </div>
-                          
-                                <div id="collapseFor" class="collapse" aria-labelledby="headingFor" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h2 class="title border-bottom">
-                                                    Demo
-                                                </h2>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col mt-3">
-                                                        <div id="for-demo">
-                                                            <table class="table">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <td scope="col">#</td>
-                                                                        <td scope="col">ugyanaz szöveggel</td>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr raven-for="objects" class="table-primary">
-                                                                        <th scope="row">
-                                                                            <span raven-text="element.id"></span>
-                                                                        </th>
-                                                                        <td>
-                                                                            <span raven-text="element.text"></span>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col mt-3">
-                                                        <button class="btn btn-primary" onclick="ravenFlyFor()">Click me</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <span class="title border-bottom">HTML</span>
-<pre>&lt;div id="if-demo"&gt;
-    &lt;span raven-if="alwaysTrue"&gt;itt igaz&lt;/span&gt; &lt;br /&gt;
-    &lt;span raven-if="alwaysFalse"&gt;itt hamis&lt;/span&gt;
-&lt;/div&gt;</pre>
-                                                        <span class="title border-bottom">JS</span>
-<pre>const ifModel = {
-    alwaysTrue: true,
-    alwaysFalse: false
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div><div class="card text-white bg-secondary">
+        <div class="card-header" id="headingText">
+            <h2 class="mb-0">
+                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
+                    # for binding <span class="badge badge-pill badge-primary">new</span>
+                </button>
+            </h2>
+        </div>
+    
+        <div id="collapse_2" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="title border-bottom">
+                            Demo
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+        <div class="row">
+            <div class="col mt-3">
+                <div id="for-demo">
+    <table class="table">
+        <thead>
+            <tr>
+                <td scope="col">#</td>
+                <td scope="col">ugyanaz szöveggel</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr raven-for="objects" class="table-primary">
+                <th scope="row">
+                    <span raven-text="element.id"></span>
+                </th>
+                <td>
+                    <span raven-text="element.text"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            </div>
+            <div class="col mt-3">
+                <button class="btn btn-primary" onclick="function_2()">Click me</button>
+                <script>
+                    function function_2() {
+                        const forModel = {
+    objects: [
+        { id: 1, text: "egy" },
+        { id: 2, text: "kettő" },
+        { id: 3, text: "három" },
+        { id: 4, text: "négy" },
+        { id: 5, text: "öt" },
+        { id: 6, text: "hat" },
+    ]
 };
 
-Raven.plugins.binding.fly("if-demo", ifModel);</pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+Raven.plugins.binding.fly("for-demo", forModel);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+                    <div class="col">
+    <div class="row">
+        <div class="col">
+            <span class="title border-bottom">HTML</span>
+<pre>&lt;div id="for-demo"&gt;
+    &lt;table class="table"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;td scope="col"&gt;#&lt;/td&gt;
+                &lt;td scope="col"&gt;ugyanaz szöveggel&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr raven-for="objects" class="table-primary"&gt;
+                &lt;th scope="row"&gt;
+                    &lt;span raven-text="element.id"&gt;&lt;/span&gt;
+                &lt;/th&gt;
+                &lt;td&gt;
+                    &lt;span raven-text="element.text"&gt;&lt;/span&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</pre>
+            <span class="title border-bottom">JS</span>
+<pre>const forModel = {
+    objects: [
+        { id: 1, text: "egy" },
+        { id: 2, text: "kettő" },
+        { id: 3, text: "három" },
+        { id: 4, text: "négy" },
+        { id: 5, text: "öt" },
+        { id: 6, text: "hat" },
+    ]
+};
+
+Raven.plugins.binding.fly("for-demo", forModel);</pre>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <script>
-            const ifModel = {
-                alwaysTrue: true,
-                alwaysFalse: false
-            };
-
-            const forModel = {
-                objects: [
-                    { id: 1, text: "egy" },
-                    { id: 2, text: "kettő" },
-                    { id: 3, text: "három" },
-                    { id: 4, text: "négy" },
-                    { id: 5, text: "öt" },
-                    { id: 6, text: "hat" },
-                ]
-            };
-
-            const textModel = {
-                text1: "alma",
-                text2: "béka"
-            };
-
-            function ravenFlyText() {
-                ravenFlyCore("text-demo", textModel);
-            }
-
-            function ravenFlyIf() {
-                ravenFlyCore("if-demo", ifModel);
-            }
-
-            function ravenFlyFor() {
-                ravenFlyCore("for-demo", forModel);
-            }
-
-            function ravenFlyCore(elementId, model) {
-                Raven.plugins.binding.fly(elementId, model);
-            }
-        </script>
-    </body>
-</html>
+            </body>
+        </html>

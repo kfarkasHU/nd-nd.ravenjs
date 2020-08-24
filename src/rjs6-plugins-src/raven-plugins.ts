@@ -3,3 +3,8 @@ import "./implementation/raven-global-fly";
 import "./implementation/raven-binding-if";
 import "./implementation/raven-binding-for";
 import "./implementation/raven-binding-text";
+import "./implementation/raven-binding-mouseout";
+import "./implementation/raven-binding-mouseover";
+import "./implementation/raven-binding-click";
+import "./implementation/raven-binding-rightclick";
+import "./implementation/raven-binding-contextmenu";
