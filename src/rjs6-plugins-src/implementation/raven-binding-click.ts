@@ -6,8 +6,8 @@ const clickEvaluateFn = function(
     expression: string,
     context: any
 ) {
-    element.addEventListener("click", function() {
-        const _ = RavenEvaluator.evaluate(expression, context);
+    element.addEventListener("click", function(event) {
+        const _ = RavenEvaluator.evaluate(expression, { ...context, ravenEvent: event });
     });
 }
 

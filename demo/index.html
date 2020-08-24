@@ -98,12 +98,77 @@ Raven.plugins.binding.fly("text-demo", textModel);</pre>
         <div class="card-header" id="headingText">
             <h2 class="mb-0">
                 <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
-                    # if binding <span class="badge badge-pill badge-primary">new</span>
+                    # click binding <span class="badge badge-pill badge-primary">new</span>
                 </button>
             </h2>
         </div>
     
         <div id="collapse_1" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="title border-bottom">
+                            Demo
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+        <div class="row">
+            <div class="col mt-3">
+                <div id="click-demo">
+    <span raven-click="onClick(ravenEvent)" style="cursor: pointer">Katt rám!</span>
+</div>
+            </div>
+            <div class="col mt-3">
+                <button class="btn btn-primary" onclick="function_1()">Click me</button>
+                <script>
+                    function function_1() {
+                        const clickModel = {
+    onClick: function(e) {
+        console.log("event", e);
+        alert("katt!");
+    }
+};
+
+Raven.plugins.binding.fly("click-demo", clickModel);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+                    <div class="col">
+    <div class="row">
+        <div class="col">
+            <span class="title border-bottom">HTML</span>
+<pre>&lt;div id="click-demo"&gt;
+    &lt;span raven-click="onClick(ravenEvent)" style="cursor: pointer"&gt;Katt rám!&lt;/span&gt;
+&lt;/div&gt;</pre>
+            <span class="title border-bottom">JS</span>
+<pre>const clickModel = {
+    onClick: function(e) {
+        console.log("event", e);
+        alert("katt!");
+    }
+};
+
+Raven.plugins.binding.fly("click-demo", clickModel);</pre>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div><div class="card text-white bg-secondary">
+        <div class="card-header" id="headingText">
+            <h2 class="mb-0">
+                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
+                    # if binding <span class="badge badge-pill badge-primary">new</span>
+                </button>
+            </h2>
+        </div>
+    
+        <div id="collapse_2" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
             <div class="card-body">
                 <div class="row">
                     <div class="col">
@@ -122,9 +187,9 @@ Raven.plugins.binding.fly("text-demo", textModel);</pre>
 </div>
             </div>
             <div class="col mt-3">
-                <button class="btn btn-primary" onclick="function_1()">Click me</button>
+                <button class="btn btn-primary" onclick="function_2()">Click me</button>
                 <script>
-                    function function_1() {
+                    function function_2() {
                         const ifModel = {
     alwaysTrue: true,
     alwaysFalse: false
@@ -160,13 +225,13 @@ Raven.plugins.binding.fly("if-demo", ifModel);</pre>
     </div><div class="card text-white bg-secondary">
         <div class="card-header" id="headingText">
             <h2 class="mb-0">
-                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">
+                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_3">
                     # for binding <span class="badge badge-pill badge-primary">new</span>
                 </button>
             </h2>
         </div>
     
-        <div id="collapse_2" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
+        <div id="collapse_3" class="collapse" aria-labelledby="headingText" data-parent="#accordionExample">
             <div class="card-body">
                 <div class="row">
                     <div class="col">
@@ -201,9 +266,9 @@ Raven.plugins.binding.fly("if-demo", ifModel);</pre>
 </div>
             </div>
             <div class="col mt-3">
-                <button class="btn btn-primary" onclick="function_2()">Click me</button>
+                <button class="btn btn-primary" onclick="function_3()">Click me</button>
                 <script>
-                    function function_2() {
+                    function function_3() {
                         const forModel = {
     objects: [
         { id: 1, text: "egy" },
