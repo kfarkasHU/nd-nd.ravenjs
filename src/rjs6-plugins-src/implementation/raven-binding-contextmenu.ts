@@ -6,9 +6,9 @@ const contextmenuEvaluateFn = function(
     expression: string,
     context: any
 ) {
-    element.addEventListener("oncontextmenu", function() {
-        const _ = RavenEvaluator.evaluate(expression, context);
-
+    element.addEventListener("contextmenu", function(event) {
+        const _ = RavenEvaluator.evaluate(expression, { ...context, ravenEvent: event });
+        event.preventDefault();
         return false;
     });
 }
