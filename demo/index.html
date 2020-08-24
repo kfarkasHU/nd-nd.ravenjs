@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="../dist/rjs6.js"></script>
+
+        <title>ravenjs demo</title>
+
+    </head>
+    <body>
+        <div id="alma">
+            <span>
+                ló
+            </span>
+            <span raven-if="true">
+                fasz
+            </span>
+            <span raven-if="false">
+                pénisz
+            </span>
+        </div>
+        <div id="alma2">
+            <div raven-for="elements">
+                <div raven-if="element.bool">
+                    <span raven-text="element.text"></span>
+                </div>
+            </div>
+        </div>
+        <div id="alma3">
+            <span raven-text="demo"></span>
+        </div>
+    </body>
+</html>
